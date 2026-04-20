@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subjects — Arijit Samanta Classes</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    :root {
+      --white: #fefdfc;
+      --black: #050505;
+      --colorPrimary: #ffff00;
+      --green-dark: #78853f;
+      --green-mid: #90953b;
+      --green-deeper: #90973b;
+      --green-accent: #7f7f31;
+      --green-hover: #8f9440;
+      --green-footer: #7a772d;
+      --bg-light: #f7f7f7;
+      --bg-input: #eeeded;
+      --dark-bg: #252525;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Roboto", sans-serif;
+      color: #0c0c0c;
+      background-color: #ffffff;
+    }
+
+    /* ═══ HEADER ═══ */
+    .header_section {
+      background-color: var(--green-mid);
+    }
+    .header_section .container-fluid { padding-right: 25px; padding-left: 25px; }
+    .custom_nav-container { z-index: 99999; padding: 5px 0; }
+    .custom_nav-container .navbar-toggler { outline: none; }
+    .custom_nav-container .navbar-toggler .navbar-toggler-icon {
+      background-image: url(../images/menu.png);
+      background-size: 30px;
+    }
+    .custom_nav-container.navbar-expand-lg .navbar-nav .nav-link {
+      padding: 10px 30px;
+      color: var(--white);
+      text-align: center;
+      text-transform: uppercase;
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+    .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link {
+      position: relative;
+    }
+    .custom_nav-container.navbar-expand-lg .navbar-nav .nav-item.active .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 65%;
+      left: 50%;
+      height: 2.5px;
+      background-color: var(--colorPrimary);
+      bottom: 8px;
+      margin: 0 auto;
+      display: block;
+      transform: translateX(-50%);
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: flex-end;
+      text-decoration: none;
+    }
+    .navbar-brand img { height: 42px; }
+    .navbar-brand span {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-left: 10px;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      font-size: 0.6rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.8;
+      display: block;
+      margin-top: -2px;
+      color: var(--white);
+    }
+    a, a:hover, a:focus { text-decoration: none; }
+
+    /* ═══ PAGE HERO ═══ */
+    .page_hero {
+      background-color: var(--green-dark);
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page_hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -10%;
+      width: 120%;
+      height: 200%;
+      background: radial-gradient(ellipse at center, rgba(255,255,255,0.03) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .page_hero h1 {
+      color: var(--colorPrimary);
+      font-size: 2.2rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+      position: relative;
+    }
+    .page_hero h1 strong {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 3rem;
+      display: block;
+      margin-top: 4px;
+    }
+    .page_hero p {
+      color: var(--white);
+      opacity: 0.85;
+      font-size: 1rem;
+      max-width: 550px;
+      margin: 16px auto 0;
+      line-height: 1.7;
+    }
+    .hero_stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 36px;
+      position: relative;
+    }
+    .hero_stat_item h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--colorPrimary);
+      line-height: 1;
+    }
+    .hero_stat_item p {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      opacity: 0.7;
+      margin-top: 6px;
+      font-weight: 500;
+    }
+
+    /* ═══ SECTION COMMONS ═══ */
+    .layout_padding { padding: 75px 0; }
+    .layout_padding-top { padding-top: 75px; }
+    .layout_padding-bottom { padding-bottom: 75px; }
+    .heading_container h2 {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: "Roboto", sans-serif;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+    .heading_container h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--colorPrimary);
+    }
+    .heading_container.centered { text-align: center; }
+    .heading_container.centered h2::after { left: 50%; transform: translateX(-50%); }
+    .section_desc {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-top: 12px;
+      max-width: 600px;
+    }
+    .heading_container.centered .section_desc { margin-left: auto; margin-right: auto; }
+
+    /* ═══ SUBJECT CARDS ═══ */
+    .subject_cards_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 45px;
+    }
+    @media (max-width: 992px) {
+      .subject_cards_grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .subject_cards_grid { grid-template-columns: 1fr; gap: 20px; }
+      .page_hero h1 { font-size: 1.5rem; }
+      .page_hero h1 strong { font-size: 2rem; }
+      .hero_stats { gap: 24px; }
+      .hero_stat_item h3 { font-size: 2rem; }
+      .compare_grid { grid-template-columns: 1fr !important; }
+      .chapter_grid { grid-template-columns: 1fr !important; }
+    }
+
+    .subject_card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      cursor: pointer;
+      position: relative;
+    }
+    .subject_card:hover {
+      transform: translateY(-10px);
+      border-color: var(--green-mid);
+      box-shadow: 0 20px 50px rgba(120, 133, 63, 0.18), 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .subject_card.featured {
+      border-color: var(--colorPrimary);
+      box-shadow: 0 0 0 1px var(--colorPrimary);
+    }
+    .subject_card.featured:hover {
+      box-shadow: 0 20px 50px rgba(255,255,0,0.12), 0 0 0 2px var(--colorPrimary);
+    }
+
+    .card_top_bar {
+      height: 5px;
+      background-color: var(--green-dark);
+      transition: height 0.3s;
+    }
+    .subject_card:hover .card_top_bar { height: 6px; }
+    .subject_card.featured .card_top_bar {
+      background-color: var(--colorPrimary);
+      height: 6px;
+    }
+
+    .card_badge_row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 22px 0;
+    }
+    .card_badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.65rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .badge_popular {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+    .badge_core {
+      background: var(--colorPrimary);
+      color: var(--black);
+    }
+    .badge_special {
+      background: var(--green-footer);
+      color: var(--white);
+    }
+    .card_class {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card_body {
+      padding: 18px 22px 22px;
+    }
+    .card_body h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .card_body .card_subtitle {
+      font-family: "Lato", sans-serif;
+      font-size: 0.82rem;
+      color: #777;
+      margin-bottom: 14px;
+    }
+    .card_body .card_desc {
+      font-size: 0.85rem;
+      color: #555;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .card_tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 18px;
+    }
+    .card_tag {
+      background: var(--bg-light);
+      color: #666;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.7rem;
+      font-weight: 500;
+      border: 1px solid #eee;
+      transition: all 0.2s;
+    }
+    .subject_card:hover .card_tag {
+      border-color: var(--green-mid);
+      color: var(--green-dark);
+      background: rgba(120,133,63,0.06);
+    }
+
+    /* Expandable topics */
+    .topics_expand {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s ease;
+    }
+    .subject_card:hover .topics_expand,
+    .subject_card.expanded .topics_expand {
+      max-height: 500px;
+    }
+    .topics_expand_inner {
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+    }
+    .topics_expand_inner .topics_title {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--green-accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .topics_expand_inner ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .topics_expand_inner li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      font-size: 0.8rem;
+      color: #555;
+    }
+    .topics_expand_inner li i {
+      color: var(--green-dark);
+      font-size: 0.45rem;
+      width: 14px;
+      text-align: center;
+    }
+
+    .card_footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid #eee;
+      margin-top: 4px;
+    }
+    .card_footer_info {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: #888;
+    }
+    .card_footer_info i { color: var(--green-accent); }
+    .card_enquire_btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 20px;
+      background-color: var(--green-dark);
+      color: var(--white);
+      border: none;
+      border-radius: 25px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .card_enquire_btn:hover {
+      background-color: var(--black);
+      color: var(--white);
+    }
+    .subject_card.featured .card_enquire-btn,
+    .subject_card.featured .card_enquire_btn {
+      background-color: var(--colorPrimary);
+      color: var(--black);
+    }
+    .subject_card.featured .card_enquire-btn:hover,
+    .subject_card.featured .card_enquire_btn:hover {
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    /* ═══ COMPARE SECTION ═══ */
+    .compare_section {
+      background-color: var(--bg-light);
+    }
+    .compare_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 45px;
+    }
+
+    .compare_card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      border: 2px solid #eee;
+      transition: all 0.3s;
+      position: relative;
+    }
+    .compare_card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.08);
+    }
+    .compare_card.popular {
+      border-color: var(--colorPrimary);
+      transform: scale(1.04);
+      box-shadow: 0 12px 40px rgba(255,255,0,0.12);
+    }
+    .compare_card.popular:hover {
+      transform: scale(1.04) translateY(-6px);
+    }
+    .popular_tag {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: var(--colorPrimary);
+      color: var(--black);
+      text-align: center;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 7px;
+      z-index: 2;
+    }
+
+    .compare_header {
+      padding: 50px 28px 28px;
+      text-align: center;
+      border-bottom: 1px solid #eee;
+    }
+    .compare_card:not(.popular) .compare_header { padding-top: 32px; }
+
+    .compare_icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      font-size: 1.4rem;
+      border: 2px solid #eee;
+      transition: all 0.3s;
+    }
+    .compare_card:hover .compare_icon { border-color: var(--green-mid); }
+    .compare_icon.phys { background: rgba(120,133,63,0.08); color: var(--green-dark); }
+    .compare_icon.bio { background: rgba(255,255,0,0.12); color: var(--green-accent); }
+    .compare_icon.nutri { background: rgba(122,119,45,0.08); color: var(--green-footer); }
+
+    .compare_header h3 {
+      font-family: "Poppins", sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--black);
+      margin-bottom: 4px;
+    }
+    .compare_header .compare_class_label {
+      font-size: 0.8rem;
+      color: #999;
+      margin-bottom: 20px;
+    }
+    .compare_price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 2px;
+    }
+    .compare_price .curr {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #888;
+      align-self: flex-start;
+      margin-top: 4px;
+    }
+    .compare_price .amt {
+      font-family: "Poppins", sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+    }
+    .compare_price .per {
+      font-size: 0.8rem;
+      color: #aaa;
+    }
+    .compare_price_note {
+      font-size: 0.72rem;
+      color: #bbb;
+      margin-top: 6px;
+    }
+
+    .compare_body { padding: 20px 28px; }
+    .compare_feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid #f5f5f5;
+    }
+    .compare_feat:last-child { border-bottom: none; }
+    .compare_feat i {
+      margin-top: 3px;
+      font-size: 0.75rem;
+      width: 18px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .compare_feat i.fa-check { color: var(--green-dark); }
+    .compare_feat i.fa-xmark { color: #ddd; }
+    .compare_feat span {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.5;
+    }
+    .compare_feat span.highlight {
+      color: var(--green-dark);
+      font-weight: 600;
+    }
+    .compare_card.popular .compare_feat span.highlight {
+      color: var(--green-accent);
+    }
+
+    .compare_footer { padding: 4px 28px 28px; }
+    .compare_btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      padding: 14px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      border: 2px solid var(--green-dark);
+      background: transparent;
+      color: var(--green-dark);
+      transition: all 0.2s;
+    }
+    .compare_btn:hover {
+      background: var(--green-dark);
+      color: var(--white);
+    }
+    .compare_card.popular .compare_btn {
+      background: var(--colorPrimary);
+      border-color: var(--colorPrimary);
+      color: var(--black);
+    }
+    .compare_card.popular .compare_btn:hover {
+      background: var(--black);
+      border-color: var(--black);
+      color: var(--white);
+    }
+
+    /* Bundle strip */
+    .bundle_strip {
+      margin-top: 32px;
+      text-align: center;
+    }
+    .bundle_strip_inner {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 2px dashed var(--colorPrimary);
+      padding: 14px 32px;
+      border-radius: 30px;
+    }
+    .bundle_strip_inner i {
+      color: var(--green-accent);
+      font-size: 1.1rem;
+    }
+    .bundle_strip_inner span {
+      font-size: 0.88rem;
+      color: #555;
+    }
+    .bundle_strip_inner strong {
+      color: var(--black);
+    }
+    .bundle_strip_inner .yellow {
+      color: var(--green-accent);
+      font-weight: 700;
+    }
+
+    /* ═══ CHAPTERS GRID ═══ */
+    .chapter_grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
+    }
+    @media (max-width: 992px) {
+      .chapter_grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .chapter_card {
+      background: var(--white);
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 22px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+    .chapter_card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px;
+      height: 0;
+      transition: height 0.4s;
+    }
+    .chapter_card:hover::before { height: 100%; }
+    .chapter_card.phys::before { background: var(--green-dark); }
+    .chapter_card.bio::before { background: var(--colorPrimary); }
+    .chapter_card.nutri::before { background: var(--green-footer); }
+
+    .chapter_card:hover {
+      border-color: var(--green-mid);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    }
+    .chapter_label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .chapter_card.phys .chapter_label { color: var(--green-dark); }
+    .chapter_card.bio .chapter_label { color: var(--green-accent); }
+    .chapter_card.nutri .chapter_label { color: var(--green-footer); }
+    .chapter_card h4 {
+      font-family: "Poppins", sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--black);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .chapter_card p {
+      font-size: 0.78rem;
+      color: #888;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ═══ BOTTOM CTA ═══ */
+    .bottom_cta {
+      background-color: var(--green-dark);
+      text-align: center;
+      padding: 80px 0;
+    }
+    .bottom_cta h2 {
+      color: var(--colorPrimary);
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      font-weight: 400;
+      letter-spacing: 2px;
+    }
+    .bottom_cta h2 strong {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 2.4rem;
+      display: block;
+      margin-top: 4px;
+    }
+    .bottom_cta p {
+      color: var(--white);
+      opacity: 0.8;
+      font-size: 0.95rem;
+      max-width: 500px;
+      margin: 16px auto 32px;
+      line-height: 1.7;
+    }
+    .cta_btns {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .cta_btn_yellow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 42px;
+      background-color: var(--colorPrimary);
+      color: var(--black);
+      border: none;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cta_btn_yellow:hover {
+      background-color: var(--white);
+      color: var(--black);
+    }
+    .cta_btn_white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 42px;
+      background-color: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.4);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cta_btn_white:hover {
+      background-color: var(--white);
+      color: var(--black);
+      border-color: var(--white);
+    }
+
+    /* ═══ INFO SECTION ═══ */
+    .info_section {
+      background-color: var(--dark-bg);
+      color: var(--white);
+      font-family: "Lato", sans-serif;
+    }
+    .info_section h5 {
+      margin: 20px 0 25px 0;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    .info_logo a {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 25px;
+      text-decoration: none;
+    }
+    .info_logo a span {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--white);
+      margin-left: 10px;
+      text-transform: uppercase;
+      font-family: "Roboto", sans-serif;
+    }
+    .info_links p {
+      font-size: 0.88rem;
+      color: #aaa;
+      margin-bottom: 10px;
+    }
+    .info_links a {
+      color: #ccc;
+      font-size: 0.88rem;
+      transition: color 0.2s;
+    }
+    .info_links a:hover { color: var(--colorPrimary); }
+
+    /* ═══ FOOTER ═══ */
+    .footer_section {
+      background-color: var(--green-footer);
+      padding: 20px;
+    }
+    .footer_section p {
+      margin: 0;
+      text-align: center;
+      color: var(--white);
+      font-size: 0.85rem;
+    }
+    .footer_section a { color: var(--white); }
+
+    /* ═══ ANIMATIONS ═══ */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .anim { opacity: 0; animation: fadeUp 0.65s ease forwards; }
+    .d1 { animation-delay: 0.1s; }
+    .d2 { animation-delay: 0.2s; }
+    .d3 { animation-delay: 0.3s; }
+    .d4 { animation-delay: 0.4s; }
+    .d5 { animation-delay: 0.5s; }
+    .d6 { animation-delay: 0.6s; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════ HEADER ═══════ -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.png" alt="" />
+          <span>
+            Arijit Samanta Classes
+            <small class="brand-sub">Physical Science · Biology · Nutrition</small>
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="subjects.html">Subjects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ═══════ PAGE HERO ═══════ -->
+  <section class="page_hero">
+    <div class="container">
+      <h1 class="anim">Our Subjects <strong>What We Teach</strong></h1>
+      <p class="anim d1">Focused, board-oriented coaching — no shortcuts, only results. Explore each subject below.</p>
+      <div class="hero_stats anim d2">
+        <div class="hero_stat_item">
+          <h3>3</h3>
+          <p>Subjects</p>
+        </div>
+        <div class="hero_stat_item">
+          <h3>4</h3>
+          <p>Classes (IX–XII)</p>
+        </div>
+        <div class="hero_stat_item">
+          <h3>100%</h3>
+          <p>Board Focused</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ SUBJECT CARDS ═══════ -->
+  <section class="layout_padding">
+    <div class="container">
+      <div class="heading_container centered anim">
+        <h2>Explore Subjects</h2>
+        <p class="section_desc">Hover over each card to see the full list of chapters covered</p>
+      </div>
+
+      <div class="subject_cards_grid">
+
+        <!-- Physical Science -->
+        <div class="subject_card anim d2">
+          <div class="card_top_bar"></div>
+          <div class="card_badge_row">
+            <span class="card_badge badge_popular"><i class="fas fa-fire"></i> Popular</span>
+            <span class="card_class">Class 9 & 10</span>
+          </div>
+          <div class="card_body">
+            <h3>Physical Science</h3>
+            <p class="card_subtitle">Physics & Chemistry Combined</p>
+            <p class="card_desc">
+              The backbone of Madhyamik. Conceptual clarity with numerical problem-solving mastery — from laws of motion to chemical reactions.
+            </p>
+            <div class="card_tags">
+              <span class="card_tag">Physics</span>
+              <span class="card_tag">Chemistry</span>
+              <span class="card_tag">Numericals</span>
+              <span class="card_tag">Lab Work</span>
+            </div>
+            <div class="topics_expand">
+              <div class="topics_expand_inner">
+                <div class="topics_title">Chapters Covered</div>
+                <ul>
+                  <li><i class="fas fa-circle"></i> Matter — Structure & Properties</li>
+                  <li><i class="fas fa-circle"></i> Atomic Structure & Chemical Bonding</li>
+                  <li><i class="fas fa-circle"></i> Periodic Table & Element Classification</li>
+                  <li><i class="fas fa-circle"></i> Chemical Reactions & Equations</li>
+                  <li><i class="fas fa-circle"></i> Force, Motion & Newton's Laws</li>
+                  <li><i class="fas fa-circle"></i> Sound & Light — Reflection & Refraction</li>
+                  <li><i class="fas fa-circle"></i> Electricity & Magnetic Effects</li>
+                  <li><i class="fas fa-circle"></i> Sources of Energy & Environment</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_footer">
+              <div class="card_footer_info">
+                <i class="fas fa-star"></i> Most enrolled
+              </div>
+              <a href="contact.html" class="card_enquire_btn">Enquire <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Biology (Featured) -->
+        <div class="subject_card featured anim d3">
+          <div class="card_top_bar"></div>
+          <div class="card_badge_row">
+            <span class="card_badge badge_core"><i class="fas fa-crown"></i> High Scoring</span>
+            <span class="card_class">Class 9 & 10</span>
+          </div>
+          <div class="card_body">
+            <h3>Biology</h3>
+            <p class="card_subtitle">Life Science</p>
+            <p class="card_desc">
+              Life Science made simple — from cell biology to human physiology. Diagrams, memorisation techniques, and board-pattern answers.
+            </p>
+            <div class="card_tags">
+              <span class="card_tag">Life Science</span>
+              <span class="card_tag">Diagrams</span>
+              <span class="card_tag">Human Body</span>
+              <span class="card_tag">Ecology</span>
+            </div>
+            <div class="topics_expand">
+              <div class="topics_expand_inner">
+                <div class="topics_title">Chapters Covered</div>
+                <ul>
+                  <li><i class="fas fa-circle"></i> Cell — Structure & Function</li>
+                  <li><i class="fas fa-circle"></i> Tissues, Organs & Organ Systems</li>
+                  <li><i class="fas fa-circle"></i> Life Processes — Nutrition, Respiration</li>
+                  <li><i class="fas fa-circle"></i> Transportation & Excretion</li>
+                  <li><i class="fas fa-circle"></i> Control & Coordination</li>
+                  <li><i class="fas fa-circle"></i> How Do Organisms Reproduce</li>
+                  <li><i class="fas fa-circle"></i> Heredity & Evolution</li>
+                  <li><i class="fas fa-circle"></i> Environment & Natural Resources</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_footer">
+              <div class="card_footer_info">
+                <i class="fas fa-star"></i> Highest scoring
+              </div>
+              <a href="contact.html" class="card_enquire_btn">Enquire <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nutrition -->
+        <div class="subject_card anim d4">
+          <div class="card_top_bar"></div>
+          <div class="card_badge_row">
+            <span class="card_badge badge_special"><i class="fas fa-apple-whole"></i> Specialised</span>
+            <span class="card_class">Class 11 & 12</span>
+          </div>
+          <div class="card_body">
+            <h3>Nutrition</h3>
+            <p class="card_subtitle">Food Science & Health</p>
+            <p class="card_desc">
+              The only subject we teach for Class 11-12 — and we teach it exceptionally well. Food science, health, and diet planning.
+            </p>
+            <div class="card_tags">
+              <span class="card_tag">Food Science</span>
+              <span class="card_tag">Diet Planning</span>
+              <span class="card_tag">Health</span>
+              <span class="card_tag">HS Focused</span>
+            </div>
+            <div class="topics_expand">
+              <div class="topics_expand_inner">
+                <div class="topics_title">Chapters Covered</div>
+                <ul>
+                  <li><i class="fas fa-circle"></i> Food Groups & Nutrient Functions</li>
+                  <li><i class="fas fa-circle"></i> Carbohydrates, Proteins & Fats</li>
+                  <li><i class="fas fa-circle"></i> Vitamins & Minerals — Sources & Deficiencies</li>
+                  <li><i class="fas fa-circle"></i> Meal Planning & Balanced Diet</li>
+                  <li><i class="fas fa-circle"></i> Food Preservation & Processing</li>
+                  <li><i class="fas fa-circle"></i> Food Safety & Standards</li>
+                  <li><i class="fas fa-circle"></i> Therapeutic & Modified Diets</li>
+                  <li><i class="fas fa-circle"></i> Community Nutrition & Public Health</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card_footer">
+              <div class="card_footer_info">
+                <i class="fas fa-star"></i> Specialised here
+              </div>
+              <a href="contact.html" class="card_enquire_btn">Enquire <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ COMPARE SECTION ═══════ -->
+  <section class="compare_section layout_padding">
+    <div class="container">
+      <div class="heading_container centered anim">
+        <h2>Compare & Choose</h2>
+        <p class="section_desc">Pick what's right for you — see everything at a glance</p>
+      </div>
+
+      <div class="compare_grid">
+
+        <!-- Physical Science -->
+        <div class="compare_card anim d2">
+          <div class="compare_header">
+            <div class="compare_icon phys">
+              <i class="fas fa-atom"></i>
+            </div>
+            <h3>Physical Science</h3>
+            <div class="compare_class_label">Class 9 & 10</div>
+            <div class="compare_price">
+              <span class="curr">₹</span>
+              <span class="amt">XXX</span>
+              <span class="per">/month</span>
+            </div>
+            <div class="compare_price_note">Per subject per month</div>
+          </div>
+          <div class="compare_body">
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Physics & Chemistry combined</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Chapter-wise notes provided</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Numerical problem practice sets</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Monthly test & progress report</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Madhyamik question pattern practice</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Doubt clearing sessions</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Board exam special revision</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-xmark"></i>
+              <span style="opacity:0.4;">Biology not included</span>
+            </div>
+          </div>
+          <div class="compare_footer">
+            <a href="contact.html" class="compare_btn">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- Biology (Popular) -->
+        <div class="compare_card popular anim d3">
+          <div class="popular_tag"><i class="fas fa-crown"></i> Most Popular</div>
+          <div class="compare_header">
+            <div class="compare_icon bio">
+              <i class="fas fa-dna"></i>
+            </div>
+            <h3>Biology</h3>
+            <div class="compare_class_label">Class 9 & 10</div>
+            <div class="compare_price">
+              <span class="curr">₹</span>
+              <span class="amt">XXX</span>
+              <span class="per">/month</span>
+            </div>
+            <div class="compare_price_note">Per subject per month</div>
+          </div>
+          <div class="compare_body">
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Complete Life Science syllabus</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Diagram practice & lab sessions</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Chapter-wise notes provided</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Monthly test & progress report</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Madhyamik question pattern practice</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Doubt clearing sessions</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Board exam special revision</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span class="highlight">Highest scoring subject!</span>
+            </div>
+          </div>
+          <div class="compare_footer">
+            <a href="contact.html" class="compare_btn">Enquire Now</a>
+          </div>
+        </div>
+
+        <!-- Nutrition -->
+        <div class="compare_card anim d4">
+          <div class="compare_header">
+            <div class="compare_icon nutri">
+              <i class="fas fa-apple-whole"></i>
+            </div>
+            <h3>Nutrition</h3>
+            <div class="compare_class_label">Class 11 & 12</div>
+            <div class="compare_price">
+              <span class="curr">₹</span>
+              <span class="amt">XXX</span>
+              <span class="per">/month</span>
+            </div>
+            <div class="compare_price_note">Per subject per month</div>
+          </div>
+          <div class="compare_body">
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Complete Nutrition syllabus (HS)</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Diet planning practical exercises</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Chapter-wise notes provided</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Monthly test & progress report</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>HS question pattern practice</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Doubt clearing sessions</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span>Board exam special revision</span>
+            </div>
+            <div class="compare_feat">
+              <i class="fas fa-check"></i>
+              <span class="highlight">Specialised only here!</span>
+            </div>
+          </div>
+          <div class="compare_footer">
+            <a href="contact.html" class="compare_btn">Enquire Now</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bundle offer -->
+      <div class="bundle_strip anim d5">
+        <div class="bundle_strip_inner">
+          <i class="fas fa-gift"></i>
+          <span>
+            Take <strong>Physical Science + Biology together</strong> for Class 9/10 and get a
+            <span class="yellow">discounted bundle price!</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CHAPTER HIGHLIGHTS ═══════ -->
+  <section class="layout_padding">
+    <div class="container">
+      <div class="heading_container centered anim">
+        <h2>Chapter Highlights</h2>
+        <p class="section_desc">Key topics across all subjects that we master with students</p>
+      </div>
+
+      <div class="chapter_grid">
+        <div class="chapter_card phys anim d2">
+          <div class="chapter_label">Physics · Chapter 04</div>
+          <h4>Force & Laws of Motion</h4>
+          <p>Newton's three laws, friction, momentum & real-world applications with numerical practice.</p>
+        </div>
+        <div class="chapter_card phys anim d3">
+          <div class="chapter_label">Physics · Chapter 08</div>
+          <h4>Electricity & Circuits</h4>
+          <p>Ohm's law, resistance, series & parallel circuits — most weighted chapter in Madhyamik.</p>
+        </div>
+        <div class="chapter_card phys anim d4">
+          <div class="chapter-label">Chemistry · Chapter 01</div>
+          <h4>Chemical Reactions</h4>
+          <p>Balancing equations, types of reactions, oxidation-reduction with board-style answering.</p>
+        </div>
+        <div class="chapter_card bio anim d2">
+          <div class="chapter_label">Biology · Chapter 02</div>
+          <h4>Life Processes</h4>
+          <p>Nutrition, respiration, transportation, excretion — the most important chapter for boards.</p>
+        </div>
+        <div class="chapter_card bio anim d3">
+          <div class="chapter_label">Biology · Chapter 05</div>
+          <h4>How Do Organisms Reproduce</h4>
+          <p>Asexual & sexual reproduction, human reproductive system with detailed diagram practice.</p>
+        </div>
+        <div class="chapter_card bio anim d4">
+          <div class="chapter_label">Biology · Chapter 07</div>
+          <h4>Heredity & Evolution</h4>
+          <p>Mendel's laws, inheritance patterns, evolution — concept clarity with board-pattern answers.</p>
+        </div>
+        <div class="chapter_card nutri anim d2">
+          <div class="chapter_label">Nutrition · Unit 01</div>
+          <h4>Food Groups & Functions</h4>
+          <p>Macro & micronutrients, their role in body, deficiency diseases — foundation of the subject.</p>
+        </div>
+        <div class="chapter_card nutri anim d3">
+          <div class="chapter_label">Nutrition · Unit 03</div>
+          <h4>Meal Planning</h4>
+          <p>Practical diet planning for different age groups, economic levels & therapeutic needs.</p>
+        </div>
+        <div class="chapter_card nutri anim d4">
+          <div class="chapter_label">Nutrition · Unit 05</div>
+          <h4>Food Safety & Standards</h4>
+          <p>FSSAI, food adulteration, preservation methods — important for both theory & viva.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ BOTTOM CTA ═══════ -->
+  <section class="bottom_cta">
+    <div class="container">
+      <h2 class="anim">Ready to <strong>Start?</strong></h2>
+      <p class="anim d1">Limited seats per batch. Enrol early to secure your spot and get the best start to your board exam preparation.</p>
+      <div class="cta_btns anim d2">
+        <a href="contact.html" class="cta_btn_yellow">
+          <i class="fas fa-paper-plane"></i> Enrol Now
+        </a>
+        <a href="https://wa.me/919002269880" target="_blank" class="cta_btn_white">
+          <i class="fab fa-whatsapp"></i> WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ INFO SECTION ═══════ -->
+  <section class="info_section layout_padding">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="info_logo">
+            <a href="index.html">
+              <img src="images/logo.png" alt="" />
+              <span>Arijit Samanta Classes</span>
+            </a>
+          </div>
+          <div class="info_links">
+            <p>Focused coaching in Physical Science, Biology, and Nutrition for Class 9 to 12. Building concepts, not just completing syllabus.</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5>Quick Links</h5>
+          <div class="info_links">
+            <p><a href="index.html"><i class="fas fa-chevron-right" style="font-size:0.6rem;margin-right:8px;"></i>Home</a></p>
+            <p><a href="about.html"><i class="fas fa-chevron-right" style="font-size:0.6rem;margin-right:8px;"></i>About Us</a></p>
+            <p><a href="subjects.html"><i class="fas fa-chevron-right" style="font-size:0.6rem;margin-right:8px;"></i>Subjects</a></p>
+            <p><a href="contact.html"><i class="fas fa-chevron-right" style="font-size:0.6rem;margin-right:8px;"></i>Contact</a></p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <h5>Subjects We Teach</h5>
+          <div class="info_links">
+            <p><i class="fas fa-atom" style="font-size:0.7rem;margin-right:8px;color:var(--green-mid);"></i>Physical Science (IX–X)</p>
+            <p><i class="fas fa-dna" style="font-size:0.7rem;margin-right:8px;color:var(--colorPrimary);"></i>Biology (IX–X)</p>
+            <p><i class="fas fa-apple-whole" style="font-size:0.7rem;margin-right:8px;color:var(--green-footer);"></i>Nutrition (XI–XII)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    <p>
+      &copy; 2026 All Rights Reserved. 
+      <a href="https://github.com/0xtanmoysamanta">Made with ❤️ by Tanmoy Samanta</a>
+    </p>
+  </section>
+  <!-- footer section -->
+  <!-- ═══════ SCRIPTS ═══════ -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Scroll-triggered animations
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.animationPlayState = 'running';
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.anim').forEach(el => {
+      el.style.animationPlayState = 'paused';
+      obs.observe(el);
+    });
+
+    // Mobile tap-to-expand
+    if ('ontouchstart' in window) {
+      document.querySelectorAll('.subject_card').forEach(card => {
+        card.addEventListener('click', function () {
+          document.querySelectorAll('.subject_card.expanded').forEach(c => {
+            if (c !== card) c.classList.remove('expanded');
+          });
+          card.classList.toggle('expanded');
+        });
+      });
+    }
+  </script>
+
+</body>
+</html>
